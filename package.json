@@ -1,0 +1,19 @@
+{
+  "name": "lando-server",
+  "version": "0.0.1",
+  "description": "Lando GRPC server & CLI client applications",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "google-protobuf": "^3.15.5",
+    "grpc": "^1.24.5",
+    "grpc-health-check": "^1.8.0",
+    "grpc-tools": "^1.11.0",
+    "yargs": "^16.2.0"
+  }
+}

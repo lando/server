@@ -1,0 +1,65 @@
+syntax = 'proto3';
+
+package lando;
+
+service Lando {
+  rpc List (ListRequest) returns (ListResponse) {};
+  rpc Run (stream RunRequest) returns (stream RunResponse) {};
+  rpc Version(versionRequest) returns (VersionResponse) {};
+}
+
+message Option {
+  string key = 1;
+  string value = 2;
+}
+
+message RunRequest {
+  string command = 1;
+  string app = 2;
+  repeated Option options = 3;
+}
+
+message RunResponse {
+  string result = 1;
+}
+
+message ListRequest {
+  string app = 1;
+}
+
+message Command {
+  string key = 1;
+  string app = 2;
+  repeated Param params = 3;
+}
+
+
+message ListResponse {
+  repeated CommandMeta commands = 1;
+}
+
+message CommandMeta {
+  string cmd = 1;
+  string scope = 2;
+  string description = 3;
+  // repeated ParamDetail params = 4;
+}
+
+message ParamDetail {
+  string key = 1;
+  string name = 2;
+  bool required = 3;
+  string description = 4;
+}
+
+message Param {
+  string key = 2;
+  string value = 3;
+}
+
+message versionRequest {
+}
+
+message VersionResponse {
+  string version = 1;
+}
