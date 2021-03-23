@@ -9,6 +9,24 @@ Rejections which result in an alternate standard should be documented as a new s
 
 ## Proposed
 
+### Environment Variable names
+3/23/21 mm
+
+Env vars are to be declared in plugins through a component implementation. They are
+scoped `global`, `service`, or `app`.
+
+`global` scoped env vars are not declared or change based on a service or app. `service` env
+vars are not declared or change based on an app`. `app` env vars are declared or the data is
+changed based on a particular app.
+
+`global` env vars are prefixed with `LANDO_`
+`service` env vars are prefixed with `LANDO_SVC_`
+`app` env vars are prefixed with `LANDO_APP_`
+
+The prefixes give context to the variable and where it came from when viewing a list
+of env vars in any given container. It also provides a clean way for one plugin to
+modify the value of env vars expoed by another plugin.
+
 ### Managers (Service layer)
 3/19/21 mm
 
