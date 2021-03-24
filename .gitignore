@@ -1,6 +1,8 @@
 .idea
 .env.local
 .env.*.local
+.nyc_output
+coverage
 build/*
 !build/.gitkeep
 node_modules

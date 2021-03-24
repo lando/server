@@ -16,6 +16,9 @@ pb:
 test:
 	node ./client/test.js
 
+test-unit:
+	./node_modules/.bin/nyc --reporter=html --reporter=text mocha --timeout 5000 test/**/*.spec.js
+
 # Starts the gRPC server
 serve:
 	node ./bin/lando-server.js
